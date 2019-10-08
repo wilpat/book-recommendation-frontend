@@ -11,7 +11,7 @@
               <img :src="`${data.book.image}`" alt="">
               <div>
                 <router-link class="link-margin" :to="{name: 'update-book', params: {id: $route.params.id}}">Update</router-link>
-                <router-link class="link-margin" :to="{}">Delete</router-link>
+                <a href="#" class="link-margin" @click.prevent="deleteBook" >Delete</a>
               </div>
           </div>
         </div>
@@ -19,3 +19,23 @@
     </ApolloQuery>
   </div>
 </template>
+
+<script>
+import DeleteBookMutation from "@/graphql/mutations/DeleteBook.gql";
+export default {
+  methods: {
+    deleteBook() {
+      this.$apollo.mutate({
+          mutation: DeleteBookMutation,
+          variables: {
+              id: this.$route.params.id
+          }
+      })
+      .then((data) => {
+          // console.log(data)
+          this.$router.push('/');
+      }).catch(console.log)
+    }
+  }
+}
+</script>

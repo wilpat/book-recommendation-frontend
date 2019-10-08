@@ -77,9 +77,10 @@ export default {
                     category: this.category
                 }
             })
-            .then((data) => {
+            .then(({data}) => {
                 // console.log(data)
-                this.$router.push('/');
+                this.$router.push({name:'books', params: {id: data.createBook.id}});
+                // this.$router.push('/');
             }).catch(console.log)
         }
     }
