@@ -6,6 +6,7 @@ query($id: ID!) {
       image
       description
       link
+      featured
       category {
           id
           name

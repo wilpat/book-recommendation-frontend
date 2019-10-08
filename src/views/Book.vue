@@ -9,6 +9,10 @@
               <div>{{ data.book.title }}</div>
               <div>{{ data.book.author }}</div>
               <img :src="`${data.book.image}`" alt="">
+              <div>
+                <router-link class="link-margin" :to="{name: 'update-book', params: {id: $route.params.id}}">Update</router-link>
+                <router-link class="link-margin" :to="{}">Delete</router-link>
+              </div>
           </div>
         </div>
       </template>
