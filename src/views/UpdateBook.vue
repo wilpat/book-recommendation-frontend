@@ -69,7 +69,7 @@ export default {
     apollo: {
         book: {// This updates the vue state after the query has been resolved    
             query: BookQuery,
-            variables () {
+            variables () {// Passing variables for a query works different from mutations own
                 if(this.$route && this.$route.params){
                     return {
                         id: this.$route.params.id
