@@ -1,8 +1,6 @@
 <template>
-  <div class="about">
-    Form for adding a book.
-
-    <h1 class="mb-4">Create Book</h1>
+  <div class="update container">
+    <h1 class="mb-4">Edit Book</h1>
     <form action="#" method="POST" @submit.prevent="addBook">
       <div class="form-group">
         <label class="font-bold mb-2" for="title">Title</label>
@@ -116,8 +114,10 @@ export default {
     .form-group {
         margin-bottom: 32px;
     }
-    input[type="text"] {
-        padding: 10px 14px
+    input[type="text"], textarea {
+        padding: 10px 14px;
+        border: 1px solid lightgray;
+        border-radius: 5px;
     }
     button {
         padding: 16px;
@@ -125,5 +125,9 @@ export default {
         color: #fff;
         border-radius: 5px;
         font-size: 16px;
+    }
+
+    label {
+      display: block;
     }
 </style>
